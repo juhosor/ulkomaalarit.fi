@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ulkomaalarit - Ulkomaalaukseen Erikoistuneet</title>
+    <link rel="icon" href="ulkomaalari.ico">
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Ulkomaalarit</h1>
+            <button class="mobile-menu-toggle" aria-label="Avaa valikko">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav">
+                <a href="#home">Koti</a>
+                <a href="#about">Tietoja</a>
+                <a href="#team">Tiimi</a>
+                <a href="#gallery">Galleria</a>
+                <a href="#news">Ajankohtaista</a>
+                <a href="#contact">Ota Yhteyttä</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>Ammattitaito ja Laatu Ulkomaalauksessa</h2>
+            <p>Luotettava kumppani rakennuksesi pintakäsittelyyn</p>
+            <a href="#contact" class="cta-button">Pyydä Tarjous</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>Keitä Me Olemme</h2>
+            <div class="about-content">
+                <div>
+                    <h3>Ammattilaiset Ulkomaalauksessa</h3>
+                    <p>Ulkomaalarit on vuonna 2025 perustettu ulkomaalaukseen erikoistunut yritys. Olemme sitoutuneet tarjoamaan korkeatasoisia maalauspalveluita kaikille rakennustyypeille.</p>
+                    <p>Tavoitteemme on tuoda reilua kilpailua markkinoille ja olla kuluttajan puolella. Tarjoamme ammattitaitoista ja korkealaatuista palvelua kilpailukykyisillä hinnoilla. Esimerkiksi omakotitalon ulkomaalauksessa tarjoamme saman laadun merkittävästi edullisemmin kuin alan suuret yritykset.</p>
+                </div>
+                <div class="services">
+                    <h3>Palvelumme</h3>
+                    <ul>
+                        <li>Omakotitalojen ulkomaalaus</li>
+                        <li>Liikekiinteistöjen maalaus</li>
+                        <li>Puurakenteiden maalaus</li>
+                        <li>Julkisivujen puuverhouksen uusiminen</li>
+                        <li>Kevyet timpurintyöt</li>
+                    </ul>
+                </div>
+                <div class="paint-can">
+                    <a href="#gallery">
+                        <img src="images/maalaus-maalipurkki.jpeg" alt="Maalipurkki">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team">
+        <div class="container">
+            <h2>Tiimimme</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="images/maalaus-juho-profiilikuva.jpeg" alt="Juho Soronen">
+                    <h3>Juho Soronen</h3>
+                </div>
+                <div class="team-member">
+                    <img src="images/maalaus-maria-profiilikuva.jpeg" alt="Maria Soronen">
+                    <h3>Maria Soronen</h3>
+                </div>
+                <div class="team-member">
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'><rect width='128' height='128' fill='%23f0f0f0'/><circle cx='64' cy='44' r='24' fill='%23c7c7c7'/><path d='M24 116c4-26 24-36 40-36s36 10 40 36H24z' fill='%23c7c7c7'/></svg>" alt="Alisa Hirvasniemi">
+                    <h3>Alisa Hirvasniemi</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2>Galleria - Aiemmat Projektit</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/maalaus-oljymalaus-katolla.jpg" alt="Öljymaalaus katolla">
+                    <p>Seinän öljymaalausta katolla</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/maalaus-taloyhtion-aita.jpg" alt="Taloyhtiön aita">
+                    <p>Taloyhtiön puuaidan huoltomaalaus</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/maalaus-tyoskentely-teline.jpeg" alt="Työskentely telineellä">
+                    <p>Työskentelyä telineellä</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/maalaus-tyoskentely-henkilonostin.jpeg" alt="Työskentelyä henkilönostimella">
+                    <p>Henkilönostimen käyttö vaikeapääsyisessä kohteessa</p>
+                </div>
+            </div>
+            
+            <!-- Before and After Section -->
+            <h3 style="text-align: center; color: #FF8C00; font-size: 2rem; margin-top: 3rem; margin-bottom: 2rem; font-weight: 800;">Kunnostusprosessi - Vaihe Vaiheelta</h3>
+            <div class="image-carousel">
+                <div class="carousel-container">
+                    <img src="images/maalaus-vaihe1.jpeg" alt="Vaihe 1: Ennen käsittelyä" class="carousel-image active">
+                    <img src="images/maalaus-vaihe2.jpeg" alt="Vaihe 2: Hiomisen jälkeen" class="carousel-image">
+                    <img src="images/maalaus-vaihe3.jpeg" alt="Vaihe 3: Pohjamaalaus" class="carousel-image">
+                    <img src="images/maalaus-vaihe4.jpeg" alt="Vaihe 4: Viimeistelty tulos" class="carousel-image">
+                    <div class="carousel-label" id="carouselLabel">Vaihe 1: Ennen käsittelyä</div>
+                </div>
+                <button class="carousel-button prev" onclick="changeImage(-1)">&#10094;</button>
+                <button class="carousel-button next" onclick="changeImage(1)">&#10095;</button>
+                <div class="carousel-dots">
+                    <span class="dot active" onclick="goToImage(0)"></span>
+                    <span class="dot" onclick="goToImage(1)"></span>
+                    <span class="dot" onclick="goToImage(2)"></span>
+                    <span class="dot" onclick="goToImage(3)"></span>
+                </div>
+            </div>
+
+            <script>
+                let currentImageIndex = 0;
+                const images = document.querySelectorAll('.carousel-image');
+                const dots = document.querySelectorAll('.dot');
+                const labels = ['Vaihe 1: Ennen käsittelyä', 'Vaihe 2: Hiomisen jälkeen', 'Vaihe 3: Pohjamaalaus', 'Vaihe 4: Viimeistelty tulos'];
+
+                function showImage(index) {
+                    if (index >= images.length) currentImageIndex = 0;
+                    if (index < 0) currentImageIndex = images.length - 1;
+                    
+                    images.forEach(img => img.classList.remove('active'));
+                    dots.forEach(dot => dot.classList.remove('active'));
+                    
+                    images[currentImageIndex].classList.add('active');
+                    dots[currentImageIndex].classList.add('active');
+                    document.getElementById('carouselLabel').textContent = labels[currentImageIndex];
+                }
+
+                function changeImage(n) {
+                    currentImageIndex += n;
+                    showImage(currentImageIndex);
+                }
+
+                function goToImage(n) {
+                    currentImageIndex = n;
+                    showImage(currentImageIndex);
+                }
+            </script>
+
+            <h3 style="text-align: center; color: #FF8C00; font-size: 2rem; margin-top: 4rem; margin-bottom: 2rem; font-weight: 800;">Ennen ja Jälkeen - Liukuta Vertailuun</h3>
+            <div class="slider-carousel-wrapper">
+                <div class="slider-carousel" id="sliderCarousel">
+                    <div class="carousel-slider-item active" data-before="images/maalaus-aita-ennen.jpeg" data-after="images/maalaus-aita-jalkeen.jpeg" data-label="Aita">
+                        <div class="before-after-slider" id="slider-0">
+                            <img src="images/maalaus-aita-ennen.jpeg" alt="Ennen" class="img-before">
+                            <img src="images/maalaus-aita-jalkeen.jpeg" alt="Jälkeen" class="img-after">
+                            <div class="slider-divider">
+                                <div class="divider-line"></div>
+                                <div class="divider-ball"></div>
+                            </div>
+                        </div>
+                        <p class="slider-description">Roskakatoksen kunnostus, jossa sisäpuoli käsiteltiin homeenestoaineella ennen maalausta.</p>
+                    </div>
+                    <div class="carousel-slider-item" data-before="images/maalaus-julkisivulauta-ennen.jpeg" data-after="images/maalaus-julkisivulauta-jalkeen.jpeg" data-label="Julkisivulauta">
+                        <div class="before-after-slider" id="slider-1">
+                            <img src="images/maalaus-julkisivulauta-ennen.jpeg" alt="Ennen" class="img-before">
+                            <img src="images/maalaus-julkisivulauta-jalkeen.jpeg" alt="Jälkeen" class="img-after">
+                            <div class="slider-divider">
+                                <div class="divider-line"></div>
+                                <div class="divider-ball"></div>
+                            </div>
+                        </div>
+                        <p class="slider-description">Timpuri vaihtoi vanhat, kuluneet julkisivulaudat uusiin. Seinä pohjamaalattiin huolellisesti, minkä jälkeen seurasi viimeisen kerroksen maalaus. Tuloksena kaunis, pitkäikäinen julkisivu.</p>
+                    </div>
+                    <div class="carousel-slider-item" data-before="images/maalaus-musta-oljymalaus-ennen.jpeg" data-after="images/maalaus-musta-oljymalaus-jalkeen.jpeg" data-label="Öljymaalaus">
+                        <div class="before-after-slider" id="slider-2">
+                            <img src="images/maalaus-musta-oljymalaus-ennen.jpeg" alt="Ennen" class="img-before">
+                            <img src="images/maalaus-musta-oljymalaus-jalkeen.jpeg" alt="Jälkeen" class="img-after">
+                            <div class="slider-divider">
+                                <div class="divider-line"></div>
+                                <div class="divider-ball"></div>
+                            </div>
+                        </div>
+                        <p class="slider-description">Seinä oli maalattu helteellä noin viisi vuotta sitten, mikä johti maalin liituuntumiseen ja hilseilyyn. Pinta skrapattiin huolellisesti, pestiin homepesuaineella ja maalattiin öljymaalilla. Tulos on kestävä ja kaunis.</p>
+                    </div>
+                </div>
+                <button class="carousel-slider-button prev" onclick="changeSliderImage(-1)">&#10094;</button>
+                <button class="carousel-slider-button next" onclick="changeSliderImage(1)">&#10095;</button>
+                <div class="carousel-slider-label" id="sliderLabel">Aita</div>
+            </div>
+
+            <script>
+                let currentSliderIndex = 0;
+                const sliderItems = document.querySelectorAll('.carousel-slider-item');
+                const allSliders = document.querySelectorAll('.before-after-slider');
+
+                function initializeSlider(slider) {
+                    const afterImg = slider.querySelector('.img-after');
+                    const divider = slider.querySelector('.slider-divider');
+                    let isDragging = false;
+
+                    function updateSliderPosition(clientX) {
+                        const rect = slider.getBoundingClientRect();
+                        const x = clientX - rect.left;
+                        const percent = Math.max(0, Math.min(100, (x / rect.width) * 100));
+                        
+                        afterImg.style.clipPath = `inset(0 ${100 - percent}% 0 0)`;
+                        divider.style.left = percent + '%';
+                    }
+
+                    slider.addEventListener('mousedown', function(e) {
+                        isDragging = true;
+                        slider.style.cursor = 'grabbing';
+                        updateSliderPosition(e.clientX);
+                    });
+
+                    document.addEventListener('mouseup', function() {
+                        if (isDragging) {
+                            isDragging = false;
+                            slider.style.cursor = 'grab';
+                        }
+                    });
+
+                    slider.addEventListener('mousemove', function(e) {
+                        if (!isDragging) return;
+                        e.preventDefault();
+                        updateSliderPosition(e.clientX);
+                    });
+
+                    slider.addEventListener('touchstart', function(e) {
+                        isDragging = true;
+                        updateSliderPosition(e.touches[0].clientX);
+                    });
+
+                    slider.addEventListener('touchmove', function(e) {
+                        if (!isDragging) return;
+                        e.preventDefault();
+                        updateSliderPosition(e.touches[0].clientX);
+                    });
+
+                    slider.addEventListener('touchend', function() {
+                        isDragging = false;
+                    });
+
+                    afterImg.style.clipPath = 'inset(0 50% 0 0)';
+                }
+
+                function showSliderImage(index) {
+                    if (index >= sliderItems.length) currentSliderIndex = 0;
+                    if (index < 0) currentSliderIndex = sliderItems.length - 1;
+
+                    sliderItems.forEach(item => item.classList.remove('active'));
+                    sliderItems[currentSliderIndex].classList.add('active');
+                    document.getElementById('sliderLabel').textContent = sliderItems[currentSliderIndex].dataset.label;
+                }
+
+                function changeSliderImage(n) {
+                    currentSliderIndex += n;
+                    showSliderImage(currentSliderIndex);
+                }
+
+                // Initialize all sliders
+                allSliders.forEach(slider => {
+                    initializeSlider(slider);
+                });
+            </script>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="news">
+        <div class="container">
+            <h2>Ajankohtaista</h2>
+            <div class="news-grid">
+                <div class="news-item">
+                    <h3>Tavoitteena tuoda lisää kilpailua alalle</h3>
+                    <p class="news-date">Missiomme</p>
+                    <p>Tavoitteemme on tuoda lisää kilpailua alalle tarjoamalla reilua ja läpinäkyvää hinnoittelua. Uskomme, että laadukas ulkomaalaus ei ole ylellisyys, vaan jokaiselle kiinteistönomistajalle kuuluva perusoikeus.</p>
+                </div>
+                <div class="news-item">
+                    <h3>Miten tarjoamme kilpailukykyisen hinnan?</h3>
+                    <p class="news-date">Yritysmallimme</p>
+                    <p>Uudenlainen yritysmallimme pohjautuu kevyeen organisaatioon ilman kalliita toimistotiloja tai raskasta hallinnollista taakkaa. Toimimme suorassa yhteydessä asiakkaisiin, mikä vähentää välikäsiä ja turhaa byrokratiaa. Tehokas työskentelytapamme ja tiivis tiimimme mahdollistavat nopean reagoinnin ja kilpailukykyisen hinnoittelun tinkimättä työn laadusta tai ammattitaidosta.</p>
+                </div>
+                <div class="news-item">
+                    <h3>Joustava tiimimme</h3>
+                    <p class="news-date">Kapasiteetti</p>
+                    <p>Tiimimme koko vaihtelee joustavasti 3–6 työntekijän välillä riippuen sesongin kiireestä ja asiakasmäärästä. Tämä mahdollistaa tehokkaan resurssien käytön ja takaa, että jokaiseen projektiin osallistuu riittävästi ammattitaitoisia maalareistamme. Vähemmän kiireisinä aikoina keskitymme pienempiin kohteisiin henkilökohtaisella palvelulla, kun taas sesongin huippujen aikana pystymme vastaamaan myös suurempiin haasteisiin laajemmalla tiimillä.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Ota Yhteyttä</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Ota Meihin Yhteyttä</h3>
+                    <div class="info-item">
+                        <h4>Puhelin</h4>
+                        <p><a href="tel:0404115001">040 411 5001</a></p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Sähköposti</h4>
+                        <p><a href="mailto:soronenjuho@gmail.com">soronenjuho@gmail.com</a></p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Osoite</h4>
+                        <p>Kiiminkijoentie 90910<br>Oulu, Suomi</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Aukioloajat</h4>
+                        <p>Ma–Pe: 08:00–19:00<br>La: 10:00–14:00<br>Su: Suljettu</p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Lähetä Viesti</h3>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Nimi *</label>
+                            <input type="text" id="name" name="from_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Sähköposti *</label>
+                            <input type="email" id="email" name="reply_to" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Puhelin</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Viesti *</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">Lähetä Yhteydenotto</button>
+                    </form>
+                    <div id="form-status" style="margin-top: 1rem; text-align: center; font-weight: bold;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Ulkomaalarit. Kaikki oikeudet pidätetään.</p>
+            <p>Ammattitaitoa ulkomaalauksessa Pohjois-Pohjanmaalla.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/358404115001" class="whatsapp-button" target="_blank" rel="noopener noreferrer" aria-label="Ota yhteyttä WhatsAppissa">
+        <svg viewBox="0 0 32 32" width="32" height="32">
+            <path fill="currentColor" d="M16 0C7.164 0 0 7.164 0 16c0 2.824.736 5.488 2.024 7.784L0 32l8.408-2.008A15.926 15.926 0 0016 32c8.836 0 16-7.164 16-16S24.836 0 16 0zm0 29.333c-2.588 0-5.088-.74-7.244-2.132l-.52-.308-5.396 1.288 1.44-5.144-.336-.536A13.24 13.24 0 012.667 16c0-7.364 5.969-13.333 13.333-13.333S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.308-9.977c-.4-.2-2.368-1.168-2.736-1.3-.368-.136-.636-.2-.904.2-.268.4-1.036 1.3-1.268 1.568-.236.268-.468.3-.868.1-.4-.2-1.688-.62-3.216-1.984-1.188-1.06-1.988-2.368-2.22-2.768-.236-.4-.024-.616.176-.816.18-.18.4-.468.6-.704.2-.232.268-.4.4-.668.136-.268.068-.5-.032-.7-.1-.2-.904-2.176-1.24-2.98-.328-.78-.66-.676-.904-.688-.232-.012-.5-.016-.768-.016s-.7.1-1.068.5c-.368.4-1.4 1.368-1.4 3.336s1.432 3.868 1.632 4.136c.2.268 2.824 4.312 6.844 6.048.956.416 1.704.664 2.288.848.96.304 1.836.26 2.528.156.772-.116 2.368-.968 2.7-1.904.336-.936.336-1.74.236-1.904-.1-.168-.368-.268-.768-.468z"/>
+        </svg>
+    </a>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const nav = document.querySelector('.nav');
+        
+        mobileMenuToggle.addEventListener('click', function() {
+            nav.classList.toggle('active');
+            mobileMenuToggle.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                nav.classList.remove('active');
+                mobileMenuToggle.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.header')) {
+                nav.classList.remove('active');
+                mobileMenuToggle.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            }
+        });
+
+        // EmailJS initialization and form handling
+        (function() {
+            emailjs.init('Ti9JB9Yr26bA83G8H'); // EmailJS Public Key
+        })();
+
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const statusDiv = document.getElementById('form-status');
+            const submitButton = this.querySelector('.submit-button');
+            
+            submitButton.disabled = true;
+            submitButton.textContent = 'Lähetetään...';
+            statusDiv.textContent = '';
+            
+            emailjs.sendForm('service_jnk4vj7', 'template_fvj1nyk', this)
+                .then(function() {
+                    statusDiv.style.color = '#28a745';
+                    statusDiv.textContent = 'Viesti lähetetty onnistuneesti! Otamme yhteyttä pian.';
+                    document.getElementById('contact-form').reset();
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Lähetä Yhteydenotto';
+                }, function(error) {
+                    statusDiv.style.color = '#dc3545';
+                    statusDiv.textContent = 'Viestin lähetys epäonnistui. Yritä uudelleen tai soita meille.';
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Lähetä Yhteydenotto';
+                    console.error('EmailJS error:', error);
+                });
+        });
+    </script>
+</body>
+</html>
