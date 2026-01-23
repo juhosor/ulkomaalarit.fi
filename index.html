@@ -4,9 +4,368 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ulkomaalarit - Ulkomaalaukseen Erikoistuneet</title>
+    <meta name="description" content="Ulkomaalarit Oulu - Ammattitaitoista ulkomaalausta omakotitaloihin ja taloyhtiöihin Oulun seudulla. Kilpailukykyiset hinnat ja laadukas työ.">
     <link rel="icon" href="ulkomaalari.ico">
     <link rel="stylesheet" href="styles.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
+    <!-- FAQ Styles -->
+    <style>
+        /* Team Member Styles */
+        .team-role {
+            color: #FF8C00;
+            font-weight: 600;
+            font-size: 1rem;
+            margin: 0.5rem 0;
+        }
+        
+        .team-description {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-top: 1rem;
+            padding: 0 1rem;
+        }
+        
+        /* FAQ Modal Styles */
+        .faq-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        
+        .faq-modal-content {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            background: white;
+            border-radius: 16px;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        
+        .faq-close {
+            position: sticky;
+            top: 0;
+            right: 0;
+            float: right;
+            background: #FF8C00;
+            color: white;
+            border: none;
+            font-size: 2rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            margin: 20px;
+            transition: all 0.3s ease;
+            z-index: 1;
+        }
+        
+        .faq-close:hover {
+            background: #e67e00;
+            transform: rotate(90deg);
+        }
+        
+        .faq {
+            background: white;
+            padding: 2rem;
+        }
+        
+        .faq h2 {
+            text-align: center;
+            color: #1a1a1a;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            font-weight: 800;
+        }
+        
+        .faq-container {
+            max-width: 100%;
+        }
+        
+        .faq-item {
+            background: #f8f9fa;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            box-shadow: 0 4px 16px rgba(255, 140, 0, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .faq-question {
+            width: 100%;
+            background: #f8f9fa;
+            border: none;
+            padding: 1.5rem 2rem;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background: #fff8f0;
+        }
+        
+        .faq-item.active .faq-question {
+            background: #FF8C00;
+            color: white;
+        }
+        
+        .faq-icon {
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: #FF8C00;
+            transition: transform 0.3s ease;
+            min-width: 30px;
+            text-align: center;
+        }
+        
+        .faq-item.active .faq-icon {
+            color: white;
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            background: white;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 1.5rem 2rem;
+            border-top: 2px solid #FF8C00;
+        }
+        
+        .faq-answer p {
+            margin: 0;
+            color: #444;
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .faq-modal-content {
+                max-height: 95vh;
+            }
+            
+            .faq h2 {
+                font-size: 2rem;
+            }
+            
+            .faq-question {
+                padding: 1.2rem 1.5rem;
+                font-size: 1rem;
+            }
+            
+            .faq-item.active .faq-answer {
+                padding: 1.2rem 1.5rem;
+            }
+            
+            .faq-close {
+                width: 40px;
+                height: 40px;
+                font-size: 1.5rem;
+                margin: 15px;
+            }
+        }
+    </style>
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Ulkomaalarit",
+      "description": "Ulkomaalaukseen erikoistunut yritys Oulun seudulla. Tarjoamme ammattitaitoista ulkomaalausta omakotitaloihin, liikekiinteistöihin ja taloyhtiöihin.",
+      "url": "https://juhosor.github.io/ulkomaalarit.fi",
+      "telephone": "+358404115001",
+      "email": "soronenjuho@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Kiiminkijoentie 90910",
+        "addressLocality": "Oulu",
+        "addressCountry": "FI"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "65.0121",
+        "longitude": "25.4651"
+      },
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": "65.0121",
+          "longitude": "25.4651"
+        },
+        "geoRadius": "50000"
+      },
+      "priceRange": "€€",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "19:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "10:00",
+          "closes": "14:00"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Maalauspalvelut",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Omakotitalojen ulkomaalaus",
+              "description": "Ammattitaitoista ulkomaalausta omakotitaloihin"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Liikekiinteistöjen maalaus",
+              "description": "Ulkomaalauspalvelut liikekiinteistöille"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Puurakenteiden maalaus",
+              "description": "Puurakenteiden ammattitaitoinen ulkomaalaus"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Julkisivujen puuverhouksen uusiminen",
+              "description": "Julkisivuverhouksen uusiminen ja maalaus"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Timpurintyöt",
+              "description": "Timpurintyöt ulkomaalausprojekteissa"
+            }
+          }
+        ]
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Juho Soronen"
+      },
+      "foundingDate": "2025",
+      "slogan": "Ammattitaito ja Laatu Ulkomaalauksessa"
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Paljonko ulkomaalaus maksaa Oulussa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Omakotitalon ulkomaalaus maksaa tyypillisesti 3000-8000 euroa Oulun seudulla, riippuen talon koosta, pintamateriaalista ja työn laajuudesta. Tarjoamme kilpailukykyisiä hintoja ilman tinkimistä laadusta. Pyydä ilmainen tarjous sivustomme kautta."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Miksi valita Ulkomaalarit maalausfirmaksi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ulkomaalarit tarjoaa ammattitaitoista ulkomaalausta reiluun hintaan Oulun seudulla. Meillä on pitkä kokemus alalta ja haluamme tuoda markkinoille tervettä kilpailua. Saat saman laadun ja ammattitaidon kuin suurilta yrityksiltä, mutta järkevämmällä hinnoittelulla."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kuinka kauan omakotitalon ulkomaalaus kestää?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Keskikokoisen omakotitalon ulkomaalaus kestää tyypillisesti 3-7 päivää riippuen pintakäsittelyn tarpeesta, säästä ja talon koosta. Aikataulu sisältää pinnan valmistelun, pohjustuksen ja maalauskäsittelyt. Kerromme tarkan aikataulun tarjousvaiheessa."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Milloin on paras aika tehdä ulkomaalaus?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Paras aika ulkomaalaukselle on touko-syyskuu, kun lämpötila on yli +5°C ja sää on kuiva. Oulussa kesäkuusta elokuuhun on ihanteellinen ajanjakso. Varaamalla ajoissa voit varmistaa paikan haluamanasi ajankohtana."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Toimitteko Oulun ulkopuolella?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kyllä, toimimme koko Oulun seudulla noin 50 km säteellä. Palvelemme muun muassa Haukiputaalla, Kiimingissä, Muhoksella ja Oulunsalossa. Ota yhteyttä, niin varmistamme palvelualueemme projektillesi."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Onko tarjous ja mittauskäynti maksullinen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ei. Tarjoamme ilmaisen mittauskäynnin ja tarjouksen kaikille asiakkaille Oulun seudulla. Tarjouspyyntö sivustomme kautta vie vain minuutin, jonka jälkeen sovimme maksuttoman käynnin kohteeseen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Mitä palveluita Ulkomaalarit tarjoaa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tarjoamme omakotitalojen ulkomaalausta, liikekiinteistöjen maalausta, puurakenteiden maalausta, julkisivujen puuverhouksen uusimista sekä timpurintöitä. Erikoisalaamme on ulkomaalaus Oulun seudulla, ja hoidamme kaiken pienten kohteiden suuriin projekteihin."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Maalataako Ulkomaalarit myös taloyhtiöitä?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kyllä. Osallistumme mielellämme taloyhtiöiden kilpailutuksiin ja hoidamme isommatkin kohteet ammattitaidolla. Tiimimme koko on joustavasti 3-6 työntekijää projektin mukaan, joten pystymme vastaamaan sekä pieniin että suuriin projekteihin."
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
     <header class="header">
@@ -22,7 +381,8 @@
                 <a href="#about">Tietoja</a>
                 <a href="#team">Tiimi</a>
                 <a href="#gallery">Galleria</a>
-                <a href="#news">Ajankohtaista</a>
+                <a href="#" id="news-trigger">Ajankohtaista</a>
+                <a href="#" id="faq-trigger">UKK</a>
                 <a href="#contact">Ota Yhteyttä</a>
             </nav>
         </div>
@@ -50,6 +410,7 @@
                     <h3>Palvelumme</h3>
                     <ul>
                         <li>Omakotitalojen ulkomaalaus</li>
+                        <li>Taloyhtiöt</li>
                         <li>Liikekiinteistöjen maalaus</li>
                         <li>Puurakenteiden maalaus</li>
                         <li>Julkisivujen puuverhouksen uusiminen</li>
@@ -73,17 +434,20 @@
                 <div class="team-member">
                     <img src="images/maalaus-juho-profiilikuva.jpeg" alt="Juho Soronen">
                     <h3>Juho Soronen</h3>
-                    <p>Yksityisasiakkaat</p>
+                    <p class="team-role">Perustaja & Yksityisasiakkaat</p>
+                    <p class="team-description">Yksityisasiakkaiden projektit. Pitkä kokemus ulkomaalauksesta ja asiakaspalvelusta.</p>
                 </div>
                 <div class="team-member">
                     <img src="images/maalaus-maria-profiilikuva.jpeg" alt="Maria Soronen">
                     <h3>Maria Soronen</h3>
-                    <p>Taloyhtiökilpailutus</p>
+                    <p class="team-role">Perustaja & Taloyhtiökilpailutus</p>
+                    <p class="team-description">Erikoisosaamisena taloyhtiöiden kilpailutusprosessit ja isännöitsijäyhteistyö. Vastaan tarjouksista ja asiakaskommunikaatiosta.</p>
                 </div>
                 <div class="team-member">
                     <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'><rect width='128' height='128' fill='%23f0f0f0'/><circle cx='64' cy='44' r='24' fill='%23c7c7c7'/><path d='M24 116c4-26 24-36 40-36s36 10 40 36H24z' fill='%23c7c7c7'/></svg>" alt="Alisa Hirvasniemi">
                     <h3>Alisa Hirvasniemi</h3>
-                    <p>Työmaakoordinointi</p>
+                    <p class="team-role">Työmaakoordinaattori</p>
+                    <p class="team-description">Vastaa aikatauluista, materiaalitoimitusten organisoinnista ja työmaan sujuvuudesta.</p>
                 </div>
             </div>
         </div>
@@ -281,8 +645,11 @@
         </div>
     </section>
 
-    <!-- News Section -->
-    <section id="news" class="news">
+    <!-- News Modal -->
+    <div id="news-modal" class="faq-modal" style="display: none;">
+        <div class="faq-modal-content">
+            <button class="faq-close news-close">&times;</button>
+            <section id="news" class="news">
         <div class="container">
             <h2>Ajankohtaista</h2>
             <div class="news-grid">
@@ -304,6 +671,94 @@
             </div>
         </div>
     </section>
+        </div>
+    </div>
+
+    <!-- FAQ Modal -->
+    <div id="faq-modal" class="faq-modal" style="display: none;">
+        <div class="faq-modal-content">
+            <button class="faq-close">&times;</button>
+            <section id="faq" class="faq">
+        <div class="container">
+            <h2>Usein Kysytyt Kysymykset</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Paljonko ulkomaalaus maksaa Oulussa?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Omakotitalon ulkomaalaus maksaa yleensä 3000-8000 euroa. Lopullinen hinta määräytyy talon koon, pintojen kunnon ja tarvittavien esitöiden mukaan. Käymme mielellämme paikan päällä arvioimassa kohteen ja annamme tarkan hinnan.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Miksi valita Ulkomaalarit maalausfirmaksi?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Teemme laadukasta työtä ilman turhaa hinnoittelua. Meillä on pitkä kokemus alalta ja hoidamme projektit ammattitaitoisesti, mutta ilman suuryritysten raskaita yleiskuluja. Saat saman lopputuloksen järkevään hintaan.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Kuinka kauan omakotitalon ulkomaalaus kestää?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Keskikokoisen omakotitalon maalaus kestää yleensä noin viikon, riippuen pintojen kunnosta ja sääolosuhteista. Aikataulu sisältää esityöt, pohjustuksen ja maalauksen. Ker...mme tarkan arvion kun olemme nähneet kohteen.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Milloin on paras aika tehdä ulkomaalaus?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Paras aika ulkomaalaukselle Oulussa on kesä-elokuu. Maalaustyö vaatii lämpimän (yli +5°C) ja kuivan sään, jotta lopputulos on kestävä. Sesonki täyttyy nopeasti, joten suosittelemme varaamaan ajoissa.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Toimitteko Oulun ulkopuolella?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Kyllä, toimimme koko Oulun seudulla noin 50 km säteellä. Palvelemme muun muassa Haukiputaalla, Kiimingissä, Muhoksella ja Oulunsalossa. Ota yhteyttä, niin varmistamme palvelualueemme.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Onko tarjous ja mittauskäynti maksullinen?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Ei. Tarjoamme ilmaisen mittauskäynnin ja tarjouksen kaikille asiakkaillemme. Ota yhteyttä sivustomme kautta tai soittamalla, niin sovimme käynnin.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Mitä palveluita Ulkomaalarit tarjoaa?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Tarjoamme omakotitalojen ja liikekiinteistöjen ulkomaalausta, puurakenteiden maalausta sekä julkisivujen puuverhouksen uusimista. Lisäksi hoidamme tarvittavat timpurityöt. Palvelemme niin pieniä kuin suuria projekteja.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Maalataako Ulkomaalarit myös taloyhtiöitä?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Kyllä. Osallistumme mielellämme taloyhtiöiden kilpailutuksiin. Tiimimme koko on joustavasti 3-6 työntekijää projektin mukaan, joten pystymme hoitamaan myös isommat kohteet ammattitaidolla.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        </div>
+    </div>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
@@ -429,6 +884,82 @@
                     submitButton.textContent = 'Lähetä Yhteydenotto';
                     console.error('EmailJS error:', error);
                 });
+        });
+
+        // FAQ Accordion functionality
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                    item.querySelector('.faq-icon').textContent = '+';
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                    button.querySelector('.faq-icon').textContent = '−';
+                }
+            });
+        });
+
+        // FAQ Modal functionality
+        const faqModal = document.getElementById('faq-modal');
+        const faqTrigger = document.getElementById('faq-trigger');
+        const faqClose = document.querySelector('#faq-modal .faq-close');
+        
+        if (faqTrigger) {
+            faqTrigger.addEventListener('click', (e) => {
+                e.preventDefault();
+                faqModal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            });
+        }
+        
+        if (faqClose) {
+            faqClose.addEventListener('click', () => {
+                faqModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+        }
+        
+        // Close modal when clicking outside
+        faqModal.addEventListener('click', (e) => {
+            if (e.target === faqModal) {
+                faqModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // News Modal functionality
+        const newsModal = document.getElementById('news-modal');
+        const newsTrigger = document.getElementById('news-trigger');
+        const newsClose = document.querySelector('.news-close');
+        
+        if (newsTrigger) {
+            newsTrigger.addEventListener('click', (e) => {
+                e.preventDefault();
+                newsModal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            });
+        }
+        
+        if (newsClose) {
+            newsClose.addEventListener('click', () => {
+                newsModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+        }
+        
+        // Close news modal when clicking outside
+        newsModal.addEventListener('click', (e) => {
+            if (e.target === newsModal) {
+                newsModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
         });
     </script>
 </body>
