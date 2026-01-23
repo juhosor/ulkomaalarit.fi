@@ -254,7 +254,9 @@
         },
         "geoRadius": "50000"
       },
-      "priceRange": "€€",
+      "priceRange": "3000-8000 EUR",
+      "paymentAccepted": "Käteinen, Korttimaksu, Lasku",
+      "currenciesAccepted": "EUR",
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
@@ -275,46 +277,100 @@
         "itemListElement": [
           {
             "@type": "Offer",
+            "price": "3000-8000",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "3000-8000",
+              "priceCurrency": "EUR"
+            },
             "itemOffered": {
               "@type": "Service",
               "name": "Omakotitalojen ulkomaalaus",
-              "description": "Ammattitaitoista ulkomaalausta omakotitaloihin"
+              "description": "Ammattitaitoista ulkomaalausta omakotitaloihin. Hinta riippuu talon koosta ja pintamateriaalista. Sisältää pinnan valmistelun, pohjustuksen ja maalauksen.",
+              "provider": {
+                "@type": "ProfessionalService",
+                "name": "Ulkomaalarit"
+              }
             }
           },
           {
             "@type": "Offer",
+            "availability": "https://schema.org/InStock",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Taloyhtiöiden ulkomaalaus",
+              "description": "Kilpailukykyiset tarjoukset taloyhtiöille. Osallistumme isännöitsijöiden kilpailutuksiin ja hoidamme kaikki tarvittavat dokumentit.",
+              "provider": {
+                "@type": "ProfessionalService",
+                "name": "Ulkomaalarit"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "availability": "https://schema.org/InStock",
             "itemOffered": {
               "@type": "Service",
               "name": "Liikekiinteistöjen maalaus",
-              "description": "Ulkomaalauspalvelut liikekiinteistöille"
+              "description": "Ulkomaalauspalvelut liikekiinteistöille. Nopea ja ammattitaitoinen toteutus.",
+              "provider": {
+                "@type": "ProfessionalService",
+                "name": "Ulkomaalarit"
+              }
             }
           },
           {
             "@type": "Offer",
+            "availability": "https://schema.org/InStock",
             "itemOffered": {
               "@type": "Service",
               "name": "Puurakenteiden maalaus",
-              "description": "Puurakenteiden ammattitaitoinen ulkomaalaus"
+              "description": "Puurakenteiden ammattitaitoinen ulkomaalaus öljy- tai vesiohenteisilla maaleilla.",
+              "provider": {
+                "@type": "ProfessionalService",
+                "name": "Ulkomaalarit"
+              }
             }
           },
           {
             "@type": "Offer",
+            "availability": "https://schema.org/InStock",
             "itemOffered": {
               "@type": "Service",
               "name": "Julkisivujen puuverhouksen uusiminen",
-              "description": "Julkisivuverhouksen uusiminen ja maalaus"
+              "description": "Julkisivuverhouksen uusiminen ja maalaus. Timpurintyöt ja maalaus samasta yrityksestä.",
+              "provider": {
+                "@type": "ProfessionalService",
+                "name": "Ulkomaalarit"
+              }
             }
           },
           {
             "@type": "Offer",
+            "availability": "https://schema.org/InStock",
             "itemOffered": {
               "@type": "Service",
               "name": "Timpurintyöt",
-              "description": "Timpurintyöt ulkomaalausprojekteissa"
+              "description": "Timpurintyöt ulkomaalausprojekteissa - laudoitukset, korjaukset ja kunnostukset.",
+              "provider": {
+                "@type": "ProfessionalService",
+                "name": "Ulkomaalarit"
+              }
             }
           }
         ]
       },
+      "knowsAbout": [
+        "Ulkomaalaus",
+        "Julkisivumaalaus",
+        "Taloyhtiömaalaus",
+        "Öljymaalaus",
+        "Pintakäsittely",
+        "Timpurintyöt",
+        "Puuverhouksen uusiminen"
+      ],
       "founder": {
         "@type": "Person",
         "name": "Juho Soronen"
