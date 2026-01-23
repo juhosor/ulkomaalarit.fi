@@ -91,7 +91,7 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, sans-serif; line-height: 1.6; co
 .carousel-slider-item.active { display: block; }
 .before-after-slider { position: relative; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 15px rgba(255, 140, 0, 0.12); cursor: grab; user-select: none; background: #f0f0f0; touch-action: none; }
 .before-after-slider:active { cursor: grabbing; }
-.img-before, .img-after { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; pointer-events: none; }
+.img-before, .img-after { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center center; pointer-events: none; }
 .img-before { z-index: 1; }
 .img-after { z-index: 2; }
 .slider-divider { position: absolute; top: 0; left: 50%; width: 3px; height: 100%; background: #FF8C00; z-index: 3; pointer-events: none; transform: translateX(-50%); transition: left 0.05s ease-out; }
@@ -263,3 +263,4 @@ body.menu-open { overflow: hidden; }
     .team-member img { width: 100px; height: 100px; }
     .slider-carousel-wrapper { padding: 0 40px; }
 }
+
