@@ -1,0 +1,14 @@
+# Ulkomaalarit robots.txt
+User-agent: *
+Allow: /
+Disallow: /cgi-bin/
+
+# Google-specific crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+# Sitemap location
+Sitemap: https://juhosor.github.io/ulkomaalarit.fi/sitemap.xml
