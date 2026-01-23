@@ -11,4 +11,4 @@ User-agent: Googlebot-Image
 Allow: /
 
 # Sitemap location
-Sitemap: https://juhosor.github.io/ulkomaalarit.fi/sitemap.xml
+Sitemap: https://ulkomaalarit.fi/sitemap.xml

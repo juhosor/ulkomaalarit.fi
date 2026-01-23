@@ -2,36 +2,36 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://juhosor.github.io/ulkomaalarit.fi/</loc>
+    <loc>https://ulkomaalarit.fi/</loc>
     <lastmod>2026-01-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://juhosor.github.io/ulkomaalarit.fi/images/maalaus-maalipurkki.jpeg</image:loc>
+      <image:loc>https://ulkomaalarit.fi/images/maalaus-maalipurkki.jpeg</image:loc>
       <image:title>Maalipurkki - Ulkomaalarit</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://juhosor.github.io/ulkomaalarit.fi/images/maalaus-juho-profiilikuva.jpeg</image:loc>
+      <image:loc>https://ulkomaalarit.fi/images/maalaus-juho-profiilikuva.jpeg</image:loc>
       <image:title>Juho Soronen - Perustaja</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://juhosor.github.io/ulkomaalarit.fi/images/maalaus-maria-profiilikuva.jpeg</image:loc>
+      <image:loc>https://ulkomaalarit.fi/images/maalaus-maria-profiilikuva.jpeg</image:loc>
       <image:title>Maria Soronen - Taloyhtiökilpailutus</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://juhosor.github.io/ulkomaalarit.fi/images/maalaus-oljymalaus-katolla.jpg</image:loc>
+      <image:loc>https://ulkomaalarit.fi/images/maalaus-oljymalaus-katolla.jpg</image:loc>
       <image:title>Ulkomaalaus - Öljymaalaus katolla</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://juhosor.github.io/ulkomaalarit.fi/images/maalaus-taloyhtion-aita.jpg</image:loc>
+      <image:loc>https://ulkomaalarit.fi/images/maalaus-taloyhtion-aita.jpg</image:loc>
       <image:title>Taloyhtiön puuaidan huoltomaalaus</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://juhosor.github.io/ulkomaalarit.fi/images/maalaus-tyoskentely-teline.jpeg</image:loc>
+      <image:loc>https://ulkomaalarit.fi/images/maalaus-tyoskentely-teline.jpeg</image:loc>
       <image:title>Maalaustyö telineellä</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://juhosor.github.io/ulkomaalarit.fi/images/maalaus-tyoskentely-henkilonostin.jpeg</image:loc>
+      <image:loc>https://ulkomaalarit.fi/images/maalaus-tyoskentely-henkilonostin.jpeg</image:loc>
       <image:title>Henkilönostimen käyttö maalauksessa</image:title>
     </image:image>
   </url>
