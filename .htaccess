@@ -1,0 +1,6 @@
+# Ohjaa kaikki www-liikenne ilman-www-osoitteeseen (ulkomaalarit.fi)
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.ulkomaalarit\.fi$ [NC]
+RewriteRule ^(.*)$ https://ulkomaalarit.fi/$1 [L,R=301]
+
+# Salli muut pyynnöt normaalisti

@@ -3,7 +3,7 @@
 
 **Ammattitaitoista ulkomaalausta Oulun seudulla**
 
-Ulkomaalarit on oululainen yritys, joka tarjoaa laadukasta ulkomaalausta omakotitaloihin, taloyhtiöihin ja liikekiinteistöihin Pohjois-Pohjanmaalla. Palvelumme perustuvat ammattitaitoon, selkeyteen ja avaimet käteen -periaatteeseen.
+Ulkomaalarit on oululainen yritys, joka tarjoaa ulkomaalausta omakotitaloihin, taloyhtiöihin ja liikekiinteistöihin Pohjois-Pohjanmaalla.
 
 ## Palvelut
 - Omakotitalojen ulkomaalaus
