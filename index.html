@@ -62,7 +62,7 @@
         }
     </script>
     
-    <!-- FAQ Styles -->
+    <!-- Team Member Styles -->
     <style>
         /* Team Member Styles */
         .team-role {
@@ -80,170 +80,6 @@
             padding: 0 1rem;
         }
         
-        /* FAQ Modal Styles */
-        .faq-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 10000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            overflow-y: auto;
-        }
-        
-        .faq-modal-content {
-            position: relative;
-            width: 100%;
-            max-width: 900px;
-            background: white;
-            border-radius: 16px;
-            max-height: 90vh;
-            overflow-y: auto;
-        }
-        
-        .faq-close {
-            position: sticky;
-            top: 0;
-            right: 0;
-            float: right;
-            background: #1E40AF;
-            color: white;
-            border: none;
-            font-size: 2rem;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            cursor: pointer;
-            margin: 20px;
-            transition: all 0.3s ease;
-            z-index: 1;
-        }
-        
-        .faq-close:hover {
-            background: #e67e00;
-            transform: rotate(90deg);
-        }
-        
-        .faq {
-            background: white;
-            padding: 2rem;
-        }
-        
-        .faq h2 {
-            text-align: center;
-            color: #1a1a1a;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            font-weight: 800;
-        }
-        
-        .faq-container {
-            max-width: 100%;
-        }
-        
-        .faq-item {
-            background: #f8f9fa;
-            border-radius: 12px;
-            margin-bottom: 1rem;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-        
-        .faq-item:hover {
-            box-shadow: 0 4px 16px rgba(30, 64, 175, 0.2);
-            transform: translateY(-2px);
-        }
-        
-        .faq-question {
-            width: 100%;
-            background: #f8f9fa;
-            border: none;
-            padding: 1.5rem 2rem;
-            text-align: left;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #1a1a1a;
-            transition: all 0.3s ease;
-        }
-        
-        .faq-question:hover {
-            background: #fff8f0;
-        }
-        
-        .faq-item.active .faq-question {
-            background: #1E40AF;
-            color: white;
-        }
-        
-        .faq-icon {
-            font-size: 1.8rem;
-            font-weight: 300;
-            color: #1E40AF;
-            transition: transform 0.3s ease;
-            min-width: 30px;
-            text-align: center;
-        }
-        
-        .faq-item.active .faq-icon {
-            color: white;
-            transform: rotate(180deg);
-        }
-        
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease, padding 0.4s ease;
-            background: white;
-        }
-        
-        .faq-item.active .faq-answer {
-            max-height: 500px;
-            padding: 1.5rem 2rem;
-            border-top: 2px solid #1E40AF;
-        }
-        
-        .faq-answer p {
-            margin: 0;
-            color: #444;
-            line-height: 1.8;
-            font-size: 1rem;
-        }
-        
-        @media (max-width: 768px) {
-            .faq-modal-content {
-                max-height: 95vh;
-            }
-            
-            .faq h2 {
-                font-size: 2rem;
-            }
-            
-            .faq-question {
-                padding: 1.2rem 1.5rem;
-                font-size: 1rem;
-            }
-            
-            .faq-item.active .faq-answer {
-                padding: 1.2rem 1.5rem;
-            }
-            
-            .faq-close {
-                width: 40px;
-                height: 40px;
-                font-size: 1.5rem;
-                margin: 15px;
-            }
-        }
     </style>
     
     <!-- Schema.org Structured Data -->
@@ -390,81 +226,58 @@
     }
     </script>
 
-    <!-- FAQ Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Paljonko ulkomaalaus maksaa Oulussa?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Omakotitalon ulkomaalaus maksaa tyypillisesti 3000-8000 euroa Oulun seudulla, riippuen talon koosta, pintamateriaalista ja työn laajuudesta. Tarjoamme kilpailukykyisiä hintoja ilman tinkimistä laadusta. Pyydä ilmainen tarjous sivustomme kautta."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Miksi valita Ulkomaalarit maalausfirmaksi?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Kun valitset meidät, valitset kokeneet maalarit. Olemme kaikki maalanneet useita vuosia kohteita ympäri Suomen, ymmärrämme kuinka toteuttaa vaikeimmatkin projektit ja haluamme henkilökohtaisesti onnistua jokaisessa urakassa. Haluamme olla yksinkertaisesti paras vaihtoehto."
-                    }
-        },
-        {
-          "@type": "Question",
-          "name": "Kuinka kauan omakotitalon ulkomaalaus kestää?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Keskikokoisen omakotitalon ulkomaalaus kestää tyypillisesti 3-7 päivää riippuen pintakäsittelyn tarpeesta, säästä ja talon koosta. Aikataulu sisältää pinnan valmistelun, pohjustuksen ja maalauskäsittelyt. Kerromme tarkan aikataulun tarjousvaiheessa."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Milloin on paras aika tehdä ulkomaalaus?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Paras aika ulkomaalaukselle on touko-syyskuu, kun lämpötila on yli +5°C ja sää on kuiva. Oulussa kesäkuusta elokuuhun on ihanteellinen ajanjakso. Varaamalla ajoissa voit varmistaa paikan haluamanasi ajankohtana."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Toimitteko Oulun ulkopuolella?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Toimimme pääasiassa Oulun seudulla ja keskitymme noin 50 km säteelle Oulusta, mutta teemme poikkeuksia tapauskohtaisesti. Ota yhteyttä, niin katsotaan onnistuuko projekti myös kauempana."
-                    }
-        },
-        {
-          "@type": "Question",
-          "name": "Onko tarjous ja mittauskäynti maksullinen?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Ei. Tarjoamme ilmaisen mittauskäynnin ja tarjouksen kaikille asiakkaille Oulun seudulla. Tarjouspyyntö sivustomme kautta vie vain minuutin, jonka jälkeen sovimme maksuttoman käynnin kohteeseen."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Mitä palveluita Ulkomaalarit tarjoaa?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Tarjoamme omakotitalojen ulkomaalausta, liikekiinteistöjen maalausta, puurakenteiden maalausta, julkisivujen puuverhouksen uusimista sekä timpurintöitä. Erikoisosaamisemme on ulkomaalaus Oulun seudulla, ja hoidamme kaiken pienten kohteiden suuriin projekteihin."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Maalataako Ulkomaalarit myös taloyhtiöitä?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Kyllä. Taloyhtiöt ovat yksi bravuureitamme, pidämme asukkaat ajantasalla ja tiedotamme heitä projektin etenemisestä jotta säästymme turhilta häiriöiltä. Työmaamme ovat tarkasti organisoituja jotta urakan läpiviennistä tulee sujuvaa."
-          }
-        }
-      ]
-    }
-    </script>
 </head>
 <body>
+    <!-- Cookie Banner -->
+    <div id="cookie-banner" style="display: none; position: fixed; bottom: 0; left: 0; right: 0; background: #2c3e50; color: #fff; padding: 1.5rem 2rem; z-index: 1000; box-shadow: 0 -2px 10px rgba(0,0,0,0.2);">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; gap: 2rem; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 220px;">
+                <p style="margin: 0; margin-bottom: 0.5rem;"><strong>Evästeet</strong></p>
+                <p style="margin: 0; font-size: 0.95rem;">Käytämme evästeitä sivuston toimivuuden parantamiseen. Hyväksy tai hylkää niiden käyttö.</p>
+            </div>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <button id="cookie-accept" style="background: #1E40AF; color: white; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: 600; transition: all 0.3s;">Hyväksy</button>
+                <button id="cookie-decline" style="background: transparent; color: white; border: 1px solid white; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: 600; transition: all 0.3s;">Hylkää</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Cookie banner functionality
+        function initCookieBanner() {
+            const banner = document.getElementById('cookie-banner');
+            const acceptBtn = document.getElementById('cookie-accept');
+            const declineBtn = document.getElementById('cookie-decline');
+            
+            // Check if user has already made a choice
+            const cookieConsent = localStorage.getItem('cookieConsent');
+            
+            if (!cookieConsent) {
+                // Show banner after 1 second
+                setTimeout(() => {
+                    banner.style.display = 'block';
+                }, 1000);
+            }
+            
+            acceptBtn.addEventListener('click', () => {
+                localStorage.setItem('cookieConsent', 'accepted');
+                banner.style.display = 'none';
+            });
+            
+            declineBtn.addEventListener('click', () => {
+                localStorage.setItem('cookieConsent', 'declined');
+                banner.style.display = 'none';
+            });
+        }
+        
+        // Initialize when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initCookieBanner);
+        } else {
+            initCookieBanner();
+        }
+    </script>
+
     <header class="header">
         <div class="container">
             <h1 class="logo">Ulkomaalarit</h1>
@@ -478,8 +291,6 @@
                 <a href="#about">Tietoja</a>
                 <a href="#team">Tiimi</a>
                 <a href="#gallery">Galleria</a>
-                <a href="#" id="news-trigger">Ajankohtaista</a>
-                <a href="#" id="faq-trigger">UKK</a>
                 <a href="#contact">Ota Yhteyttä</a>
             </nav>
         </div>
@@ -499,20 +310,13 @@
             <h2>Keitä Me Olemme</h2>
             <div class="about-content">
                 <div>
-                    <h3>Ammattilaiset Ulkomaalauksessa</h3>
-                    <p>Olemme oululainen yritys, jonka taustalla on pitkä kokemus ulkomaalauksesta. Perustimme Ulkomaalarit‑yrityksen vuonna 2025 tuodaksemme alalle lisää kilpailua ja entistä parempaa asiakaspalvelua.</p>
-                    <p>Työmme perustuu ammattimaiseen toteutukseen, selkeään palveluun ja avaimet käteen ‑periaatteeseen. Me hoidamme suunnittelun, aikataulun ja työn – sinä saat valmiin lopputuloksen helposti.</p>
+                    <h3>Kokeneet maalarit</h3>
+                    <p>Terve! Tarvitko maalaria? Me osataan. Ollaan toiminimimaalareita, mutta todella hyviä hommassamme. Vastataan henkilökohtaisesti jokainen projekti loppuun asti, ja ainoa markkinointi mistä maksat on hyvän sanan kiertoon laittaminen.</p>
+                    <p>Laita harkintaan, tarjouksen pyyntäminen on ilmaista ja ollaan todella varmoja että tulette yllättymään hyvinkin positiivisesti lopputuloksesta!</p>
                 </div>
                 <div class="services">
                     <h3>Palvelumme</h3>
-                    <ul>
-                        <li>Omakotitalojen ulkomaalaus</li>
-                        <li>Taloyhtiöt</li>
-                        <li>Liikekiinteistöjen maalaus</li>
-                        <li>Julkisivujen puuverhouksen uusiminen</li>
-                        <li>Timpurintyöt</li>
-                        <li>Metalli-, betoni- ja kivipintojen maalaus</li>
-                    </ul>
+                    <p>Teemme taloyhtiöiden ja omakotitalojen maalauksia, sekä tarpeenmukaisia timpurintöitä ulkoverhouksille.<br><br>Toimintaperiaatteemme on pyörittää hommaa toiminimillä, ja minimoida kaikki muut menot paitsi itse maalaus. Saadaan näin varmasti todella kilpailukykyinen hinta, ja laadusta voidaan olla myös erittäin ylpeitä. (Nämä nettisivutkin on valitettavasti täysin itse tehty.)</p>
                 </div>
                 <div class="paint-can">
                     <a href="#gallery">
@@ -556,10 +360,6 @@
                 <div class="gallery-item">
                     <img src="images/maalaus-taloyhtion-aita.jpg" alt="Taloyhtiön puuaidan huoltomaalaus Oulu - ammattitaitoinen aitamaalaus - ulkopuun pintasuojaus - Ulkomaalarit referenssikohde">
                     <p>Taloyhtiön puuaidan huoltomaalaus</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/maalaus-tyoskentely-teline.jpeg" alt="Ulkomaalaus telinetyöskentely - ammattimainen julkisivun maalaus - työturvallisuus ulkomaalauksessa Oulu - Ulkomaalarit ammattilaiset">
-                    <p>Työskentelyä telineellä</p>
                 </div>
                 <div class="gallery-item">
                     <img src="images/maalaus-tyoskentely-henkilonostin.jpeg" alt="Henkilönostimen käyttö ulkomaalauksessa - vaikeaselitteisten kohteiden maalaus Oulu - korkeiden julkisivujen maalauspalvelu - Ulkomaalarit erikoisosaaminen">
@@ -619,30 +419,8 @@
             <h3 style="text-align: center; color: #1E40AF; font-size: 2rem; margin-top: 4rem; margin-bottom: 2rem; font-weight: 800;">Ennen ja Jälkeen - Liukuvertailu</h3>
             <div class="slider-carousel-wrapper">
                 <div class="slider-carousel" id="sliderCarousel">
-                    <div class="carousel-slider-item active" data-before="images/maalaus-aita-ennen.jpeg" data-after="images/maalaus-aita-jalkeen.jpeg" data-label="Aita">
-                        <div class="before-after-slider" id="slider-0">
-                            <img src="images/maalaus-aita-ennen.jpeg" alt="Ennen maalausta - roskakatoksen vanha pintamateriaali - kuluneet puuosat - homevahinko - Oulu ulkomaalauskunnostuskohde" class="img-before">
-                            <img src="images/maalaus-aita-jalkeen.jpeg" alt="Jälkeen maalauksen - roskakatoksen uusi pintamaalaus - homeenestoaineella käsitelty - ammattitaitoinen ulkomaalaus Oulu - Ulkomaalarit" class="img-after">
-                            <div class="slider-divider">
-                                <div class="divider-line"></div>
-                                <div class="divider-ball"></div>
-                            </div>
-                        </div>
-                        <p class="slider-description">Roskakatoksen kunnostus, jossa sisäpuoli käsiteltiin homeenestoaineella ennen maalausta.</p>
-                    </div>
-                    <div class="carousel-slider-item" data-before="images/maalaus-julkisivulauta-ennen.jpeg" data-after="images/maalaus-julkisivulauta-jalkeen.jpeg" data-label="Julkisivulauta">
+                    <div class="carousel-slider-item active" data-before="images/maalaus-musta-oljymalaus-ennen.jpeg" data-after="images/maalaus-musta-oljymalaus-jalkeen.jpeg" data-label="Öljymaalaus">
                         <div class="before-after-slider" id="slider-1">
-                            <img src="images/maalaus-julkisivulauta-ennen.jpeg" alt="Ennen - vanhat kuluneet julkisivulaudat - vaurioitunut puupinta - kunnostusta tarvitseva seinä - ulkomaalausremontti Oulu" class="img-before">
-                            <img src="images/maalaus-julkisivulauta-jalkeen.jpeg" alt="Jälkeen - uudet julkisivulaudat - pohjamaalattu seinä - ammattitimpurin ja maalarin yhteistyö - laadukas lopputulos Oulu Ulkomaalarit" class="img-after">
-                            <div class="slider-divider">
-                                <div class="divider-line"></div>
-                                <div class="divider-ball"></div>
-                            </div>
-                        </div>
-                        <p class="slider-description">Timpuri vaihtoi vanhat, kuluneet julkisivulaudat uusiin. Seinä pohjamaalattiin huolellisesti ja lopuksi maalattiin viimeinen kerros.</p>
-                    </div>
-                    <div class="carousel-slider-item" data-before="images/maalaus-musta-oljymalaus-ennen.jpeg" data-after="images/maalaus-musta-oljymalaus-jalkeen.jpeg" data-label="Öljymaalaus">
-                        <div class="before-after-slider" id="slider-2">
                             <img src="images/maalaus-musta-oljymalaus-ennen.jpeg" alt="Ennen - liituuntunut ja hilseillään maalipinta - heltevaurioitunut ulkoseinä - pintaremontti tarve Oulu - ammattimaalarin arvio" class="img-before">
                             <img src="images/maalaus-musta-oljymalaus-jalkeen.jpeg" alt="Jälkeen - uusi öljymaalipinta - skrapattu ja pestty homepesuaineella - kestävä ammattilaatuinen ulkomaalaus Oulu - Ulkomaalarit erikoisosaaminen" class="img-after">
                             <div class="slider-divider">
@@ -652,10 +430,21 @@
                         </div>
                         <p class="slider-description">Seinä oli maalattu helteellä noin viisi vuotta sitten, mikä johti maalin liituuntumiseen ja hilseilyyn. Pinta skrapattiin huolellisesti, pestiin homepesuaineella ja maalattiin öljymaalilla.</p>
                     </div>
+                    <div class="carousel-slider-item" data-before="images/maalaus-julkisivulauta-ennen.jpeg" data-after="images/maalaus-julkisivulauta-jalkeen.jpeg" data-label="Julkisivulauta">
+                        <div class="before-after-slider" id="slider-0">
+                            <img src="images/maalaus-julkisivulauta-ennen.jpeg" alt="Ennen - vanhat kuluneet julkisivulaudat - vaurioitunut puupinta - kunnostusta tarvitseva seinä - ulkomaalausremontti Oulu" class="img-before">
+                            <img src="images/maalaus-julkisivulauta-jalkeen.jpeg" alt="Jälkeen - uudet julkisivulaudat - pohjamaalattu seinä - ammattitimpurin ja maalarin yhteistyö - laadukas lopputulos Oulu Ulkomaalarit" class="img-after">
+                            <div class="slider-divider">
+                                <div class="divider-line"></div>
+                                <div class="divider-ball"></div>
+                            </div>
+                        </div>
+                        <p class="slider-description">Timpuri vaihtoi vanhat, kuluneet julkisivulaudat uusiin. Seinä pohjamaalattiin huolellisesti ja lopuksi maalattiin viimeinen kerros.</p>
+                    </div>
                 </div>
                 <button class="carousel-slider-button prev" onclick="changeSliderImage(-1)">&#10094;</button>
                 <button class="carousel-slider-button next" onclick="changeSliderImage(1)">&#10095;</button>
-                <div class="carousel-slider-label" id="sliderLabel">Aita</div>
+                <div class="carousel-slider-label" id="sliderLabel">Öljymaalaus</div>
             </div>
 
             <script>
@@ -735,130 +524,6 @@
             </script>
         </div>
     </section>
-
-    <!-- News Modal -->
-    <div id="news-modal" class="faq-modal" style="display: none;">
-        <div class="faq-modal-content news-modal-wide">
-            <button class="faq-close news-close">&times;</button>
-            <section id="news" class="news">
-        <div class="container">
-            <h2>Ajankohtaista</h2>
-            <div class="news-grid">
-                <div class="news-item">
-                    <h3>Tavoitteena tuoda lisää kilpailua alalle</h3>
-                    <p class="news-date">Missiomme</p>
-                    <p>Tavoitteemme on tuoda lisää kilpailua alalle tarjoamalla reilua ja läpinäkyvää hinnoittelua. Laadukas ulkomaalaus ei ole, eikä sitä pitäisi hinnoitella ylellisyytenä.</p>
-                </div>
-                <div class="news-item">
-                    <h3>Miten tarjoamme kilpailukykyisen hinnan?</h3>
-                    <p class="news-date">Yritysmallimme</p>
-                    <p>Uudenlainen yritysmallimme pohjautuu kevyeen organisaatioon ilman kalliita toimistotiloja tai raskasta hallinnollista taakkaa. Toimimme suorassa yhteydessä asiakkaisiin, mikä vähentää välikäsiä ja turhaa byrokratiaa. Kokenut maalaustahtimme ja välitön kommunikointi asiakkalta maalarille mahdollistaa nopean reagoinnin ja kilpailukykyisen hinnoittelun tinkimättä työn laadusta tai ammattitaidosta.</p>
-                </div>
-                <div class="news-item">
-                    <h3>Joustava tiimimme</h3>
-                    <p class="news-date">Kapasiteetti</p>
-                    <p>Toimimme 2–6 työntekijän välillä riippuen kohteen suuruudesta, ja siitä montako kohdetta hoidamme yhtaikaisesti. Omakotitalokohde vaatii 2 maalaria, kun isompi taloyhtiö voi vaatia kaikkien tekijöiden yhteistyön. Tämä joustavuus mahdollistaa että voimme joko suorittaa monta keskikokoista urakkaa samaan aikaan, tai sitten yhden suuren projektin nopean ja suunnitelmallisen läpiviennin kerralla.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-        </div>
-    </div>
-
-    <!-- FAQ Modal -->
-    <div id="faq-modal" class="faq-modal" style="display: none;">
-        <div class="faq-modal-content">
-            <button class="faq-close">&times;</button>
-            <section id="faq" class="faq">
-        <div class="container">
-            <h2>Usein Kysytyt Kysymykset</h2>
-            <div class="faq-container">
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Paljonko ulkomaalaus maksaa Oulussa?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Omakotitalon ulkomaalaus maksaa yleensä 3000-8000 euroa. Lopullinen hinta määräytyy talon koon, pintojen kunnon ja tarvittavien esitöiden mukaan. Käymme mielellämme paikan päällä arvioimassa kohteen ja annamme tarkan hinnan.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Miksi valita Ulkomaalarit maalausfirmaksi?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Kun valitset meidät, valitset kokeneet maalarit. Olemme kaikki maalanneet useita vuosia kohteita ympäri Suomen, ymmärrämme kuinka toteuttaa vaikeimmatkin projektit ja haluamme henkilökohtaisesti onnistua jokaisessa urakassa. Haluamme olla yksinkertaisesti paras vaihtoehto.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Kannattaako tiilitalo maalata?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Yleensä ei. Tiiliseinä on lähes huoltovapaa, mutta maalaus muuttaa sen maalipinnaksi, joka vaatii jatkossa huoltomaalauksen noin 10–15 vuoden välein. Ellei tähän ole erityistä tarvetta, ei kannata. Harkitse muita vaihtoehtoja, kuten puhdistusta ja suojausta.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Kuinka kauan omakotitalon ulkomaalaus kestää?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Keskikokoisen omakotitalon maalaus kestää yleensä noin viikon, riippuen pintojen kunnosta ja sääolosuhteista. Aikataulu sisältää esityöt, pohjustuksen ja maalauksen. Kerromme tarkan arvion, kun olemme nähneet kohteen.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Milloin on paras aika tehdä ulkomaalaus?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Paras aika ulkomaalaukselle Oulussa on huhti-elokuu. Maalaustyö vaatii lämpimän (yli +5°C) ja kuivan sään, jotta lopputulos on kestävä. Sesonki täyttyy nopeasti, joten suosittelemme varaamaan ajoissa.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Toimitteko Oulun ulkopuolella?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Toimimme pääasiassa Oulun seudulla ja keskitymme noin 50 km säteelle Oulusta, mutta teemme poikkeuksia tapauskohtaisesti. Ota yhteyttä, niin katsotaan onnistuuko projekti myös kauempana.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Onko tarjous ja mittauskäynti maksullinen?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Ei. Tarjoamme ilmaisen mittauskäynnin ja tarjouksen kaikille asiakkaillemme. Ota yhteyttä sivustomme kautta tai soittamalla, niin sovimme käynnin.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Mitä palveluita Ulkomaalarit tarjoaa?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Tarjoamme omakotitalojen ja liikekiinteistöjen ulkomaalausta, puurakenteiden maalausta sekä julkisivujen puuverhouksen uusimista. Lisäksi hoidamme tarvittavat timpurityöt. Palvelemme niin pieniä kuin suuria projekteja.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Maalaako Ulkomaalarit myös taloyhtiöitä?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Kyllä. Osallistumme taloyhtiöiden kilpailutuksiin. Tiimimme koko on joustavasti 3-6 työntekijää projektin mukaan, joten pystymme hoitamaan myös isommat kohteet sujuvasti.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-        </div>
-    </div>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
@@ -987,81 +652,6 @@
                 });
         });
 
-        // FAQ Accordion functionality
-        document.querySelectorAll('.faq-question').forEach(button => {
-            button.addEventListener('click', () => {
-                const faqItem = button.parentElement;
-                const isActive = faqItem.classList.contains('active');
-                
-                // Close all FAQ items
-                document.querySelectorAll('.faq-item').forEach(item => {
-                    item.classList.remove('active');
-                    item.querySelector('.faq-icon').textContent = '+';
-                });
-                
-                // Open clicked item if it wasn't active
-                if (!isActive) {
-                    faqItem.classList.add('active');
-                    button.querySelector('.faq-icon').textContent = '−';
-                }
-            });
-        });
-
-        // FAQ Modal functionality
-        const faqModal = document.getElementById('faq-modal');
-        const faqTrigger = document.getElementById('faq-trigger');
-        const faqClose = document.querySelector('#faq-modal .faq-close');
-        
-        if (faqTrigger) {
-            faqTrigger.addEventListener('click', (e) => {
-                e.preventDefault();
-                faqModal.style.display = 'flex';
-                document.body.style.overflow = 'hidden';
-            });
-        }
-        
-        if (faqClose) {
-            faqClose.addEventListener('click', () => {
-                faqModal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            });
-        }
-        
-        // Close modal when clicking outside
-        faqModal.addEventListener('click', (e) => {
-            if (e.target === faqModal) {
-                faqModal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        });
-
-        // News Modal functionality
-        const newsModal = document.getElementById('news-modal');
-        const newsTrigger = document.getElementById('news-trigger');
-        const newsClose = document.querySelector('.news-close');
-        
-        if (newsTrigger) {
-            newsTrigger.addEventListener('click', (e) => {
-                e.preventDefault();
-                newsModal.style.display = 'flex';
-                document.body.style.overflow = 'hidden';
-            });
-        }
-        
-        if (newsClose) {
-            newsClose.addEventListener('click', () => {
-                newsModal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            });
-        }
-        
-        // Close news modal when clicking outside
-        newsModal.addEventListener('click', (e) => {
-            if (e.target === newsModal) {
-                newsModal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        });
     </script>
 </body>
 </html>
