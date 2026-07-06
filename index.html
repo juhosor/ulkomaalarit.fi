@@ -1,7 +1,43 @@
 <!DOCTYPE html>
 <html lang="fi">
 <head>
-    <meta charset="UTF-8">
+        <!-- Google Analytics (gtag.js) - consent-ready -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-9JETS474WL"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);} 
+            gtag('js', new Date());
+
+            // Default: deny analytics_storage until user gives consent
+            gtag('consent', 'default', { 'analytics_storage': 'denied' });
+
+            // Configure without sending page_view automatically
+            gtag('config', 'G-9JETS474WL', {
+                'anonymize_ip': true,
+                'send_page_view': false
+            });
+
+            // Call this to enable analytics after user accepts
+            function enableAnalytics() {
+                try {
+                    gtag('consent', 'update', { 'analytics_storage': 'granted' });
+                    gtag('event', 'page_view', { 'send_to': 'G-9JETS474WL' });
+                } catch (e) {
+                    console.warn('gtag enableAnalytics error', e);
+                }
+            }
+
+            // Call this to ensure analytics is disabled (on decline)
+            function disableAnalytics() {
+                try {
+                    gtag('consent', 'update', { 'analytics_storage': 'denied' });
+                } catch (e) {
+                    console.warn('gtag disableAnalytics error', e);
+                }
+            }
+        </script>
+
+        <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ulkomaalarit | Talon Maalaus Oulu | Julkisivumaalaus</title>
     <meta name="description" content="Ulkomaalarit Oulu - Ammattitaitoista ulkomaalausta omakotitaloihin ja taloyhtiöihin Oulun seudulla. Kilpailukykyiset hinnat ja laadukas työ. Pyydä ilmainen tarjous!">
@@ -243,32 +279,43 @@
     </div>
 
     <script>
-        // Cookie banner functionality
-        function initCookieBanner() {
-            const banner = document.getElementById('cookie-banner');
-            const acceptBtn = document.getElementById('cookie-accept');
-            const declineBtn = document.getElementById('cookie-decline');
-            
-            // Check if user has already made a choice
-            const cookieConsent = localStorage.getItem('cookieConsent');
-            
-            if (!cookieConsent) {
-                // Show banner after 1 second
-                setTimeout(() => {
-                    banner.style.display = 'block';
-                }, 1000);
+            // Cookie banner functionality
+            function initCookieBanner() {
+                const banner = document.getElementById('cookie-banner');
+                const acceptBtn = document.getElementById('cookie-accept');
+                const declineBtn = document.getElementById('cookie-decline');
+
+                // Check if user has already made a choice
+                const cookieConsent = localStorage.getItem('cookieConsent');
+
+                if (!cookieConsent) {
+                    // Show banner after 1 second
+                    setTimeout(() => {
+                        banner.style.display = 'block';
+                    }, 1000);
+                } else {
+                    // If already accepted, enable analytics
+                    if (cookieConsent === 'accepted' && typeof enableAnalytics === 'function') {
+                        enableAnalytics();
+                    }
+                    // If declined, ensure analytics is disabled
+                    if (cookieConsent === 'declined' && typeof disableAnalytics === 'function') {
+                        disableAnalytics();
+                    }
+                }
+
+                acceptBtn.addEventListener('click', () => {
+                    localStorage.setItem('cookieConsent', 'accepted');
+                    banner.style.display = 'none';
+                    if (typeof enableAnalytics === 'function') enableAnalytics();
+                });
+
+                declineBtn.addEventListener('click', () => {
+                    localStorage.setItem('cookieConsent', 'declined');
+                    banner.style.display = 'none';
+                    if (typeof disableAnalytics === 'function') disableAnalytics();
+                });
             }
-            
-            acceptBtn.addEventListener('click', () => {
-                localStorage.setItem('cookieConsent', 'accepted');
-                banner.style.display = 'none';
-            });
-            
-            declineBtn.addEventListener('click', () => {
-                localStorage.setItem('cookieConsent', 'declined');
-                banner.style.display = 'none';
-            });
-        }
         
         // Initialize when DOM is ready
         if (document.readyState === 'loading') {
