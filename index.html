@@ -279,10 +279,10 @@
             <h2>Tiimimme</h2>
             <div class="team-grid">
                 <div class="team-member">
-                    <img src="images/maalaus-juho-profiilikuva.jpeg" alt="Juho Soronen - Ulkomaalarit työmääpäällikkö - ammattimaalari Oulu - yksityisasiakkaiden ulkomaalauspalvelut">
+                    <img src="images/juho hitsaamassa profiilikuva.jpg" alt="Juho hitsaamassa">
                     <h3>Juho Soronen</h3>
-                    <p class="team-role">Vastuuhenkilö</p>
-                    <p class="team-description">Kuuden vuoden kokemus ulkomaalauksesta.</p>
+                    <p class="team-role">Hallinnon ja työmaiden vastuuhenkilö</p>
+                    <p class="team-description">Kuuden vuoden kokemus ulkomaalauksesta. Vastuussa sopimuksista, takuusta, vakuutuksista ja muista paperitöistä.</p>
                 </div>
                 <div class="team-member">
                     <img src="images/Maria korjaamassa rautaa.jpg" alt="Maria hiomassa rautaa">
@@ -365,7 +365,8 @@
             <h3 style="text-align: center; color: #1E40AF; font-size: 2rem; margin-top: 4rem; margin-bottom: 2rem; font-weight: 800;">Ennen ja Jälkeen - Liukuvertailu</h3>
             <div class="slider-carousel-wrapper">
                 <div class="slider-carousel" id="sliderCarousel">
-                    <div class="carousel-slider-item active" data-before="images/maalaus-musta-oljymalaus-ennen.jpeg" data-after="images/maalaus-musta-oljymalaus-jalkeen.jpeg" data-label="Öljymaalaus">
+                    <div class="carousel-slider-item" data-before="images/maalaus-musta-oljymalaus-ennen.jpeg" data-after="images/maalaus-musta-oljymalaus-jalkeen.jpeg" data-label="Öljymaalaus">
+                        <div class="carousel-slider-label">Öljymaalaus</div>
                         <div class="before-after-slider" id="slider-1">
                             <img src="images/maalaus-musta-oljymalaus-ennen.jpeg" alt="Ennen - liituuntunut ja hilseillään maalipinta - heltevaurioitunut ulkoseinä - pintaremontti tarve Oulu - ammattimaalarin arvio" class="img-before">
                             <img src="images/maalaus-musta-oljymalaus-jalkeen.jpeg" alt="Jälkeen - uusi öljymaalipinta - skrapattu ja pestty homepesuaineella - kestävä ammattilaatuinen ulkomaalaus Oulu - Ulkomaalarit erikoisosaaminen" class="img-after">
@@ -377,6 +378,7 @@
                         <p class="slider-description">Seinä oli maalattu helteellä noin viisi vuotta sitten, mikä johti maalin liituuntumiseen ja hilseilyyn. Pinta skrapattiin huolellisesti, pestiin homepesuaineella ja maalattiin öljymaalilla.</p>
                     </div>
                     <div class="carousel-slider-item" data-before="images/maalaus-julkisivulauta-ennen.jpeg" data-after="images/maalaus-julkisivulauta-jalkeen.jpeg" data-label="Julkisivulauta">
+                        <div class="carousel-slider-label">Julkisivulauta</div>
                         <div class="before-after-slider" id="slider-0">
                             <img src="images/maalaus-julkisivulauta-ennen.jpeg" alt="Ennen - vanhat kuluneet julkisivulaudat - vaurioitunut puupinta - kunnostusta tarvitseva seinä - ulkomaalausremontti Oulu" class="img-before">
                             <img src="images/maalaus-julkisivulauta-jalkeen.jpeg" alt="Jälkeen - uudet julkisivulaudat - pohjamaalattu seinä - ammattitimpurin ja maalarin yhteistyö - laadukas lopputulos Oulu Ulkomaalarit" class="img-after">
@@ -388,14 +390,9 @@
                         <p class="slider-description">Timpuri vaihtoi vanhat, kuluneet julkisivulaudat uusiin. Seinä pohjamaalattiin huolellisesti ja lopuksi maalattiin viimeinen kerros.</p>
                     </div>
                 </div>
-                <button class="carousel-slider-button prev" onclick="changeSliderImage(-1)">&#10094;</button>
-                <button class="carousel-slider-button next" onclick="changeSliderImage(1)">&#10095;</button>
-                <div class="carousel-slider-label" id="sliderLabel">Öljymaalaus</div>
             </div>
 
             <script>
-                let currentSliderIndex = 0;
-                const sliderItems = document.querySelectorAll('.carousel-slider-item');
                 const allSliders = document.querySelectorAll('.before-after-slider');
 
                 function initializeSlider(slider) {
@@ -447,20 +444,6 @@
                     });
 
                     afterImg.style.clipPath = 'inset(0 50% 0 0)';
-                }
-
-                function showSliderImage(index) {
-                    if (index >= sliderItems.length) currentSliderIndex = 0;
-                    if (index < 0) currentSliderIndex = sliderItems.length - 1;
-
-                    sliderItems.forEach(item => item.classList.remove('active'));
-                    sliderItems[currentSliderIndex].classList.add('active');
-                    document.getElementById('sliderLabel').textContent = sliderItems[currentSliderIndex].dataset.label;
-                }
-
-                function changeSliderImage(n) {
-                    currentSliderIndex += n;
-                    showSliderImage(currentSliderIndex);
                 }
 
                 // Initialize all sliders
