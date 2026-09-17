@@ -33,4 +33,10 @@
       <image:title>Henkilönostimen käyttö maalauksessa</image:title>
     </image:image>
   </url>
+  <url>
+    <loc>https://ulkomaalarit.fi/privacy.html</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>

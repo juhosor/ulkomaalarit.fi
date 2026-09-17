@@ -13,13 +13,12 @@ Ulkomaalarit on oululainen yritys, joka tarjoaa ulkomaalausta omakotitaloihin, t
 - Metalli-, betoni- ja kivipintojen maalaus
 
 ## Yhteystiedot
-- **Puhelin:** 040 411 5001
 - **Sähköposti:** soronenjuho@gmail.com
 - **Osoite:** Kiiminkijoentie 718, 90910 Oulu, Suomi
 - **Verkkosivut:** [https://ulkomaalarit.fi](https://ulkomaalarit.fi)
 
 ## Tietoa projektista
-Tämä projekti sisältää Ulkomaalarit.fi-sivuston lähdekoodin. Sivusto on rakennettu HTML- ja CSS-teknologioilla ja julkaistu GitHub Pagesin kautta. Sivustolla on käytössä hakukoneystävälliset meta-tiedot, schema.org-rakenteinen data ja EmailJS-yhteydenottolomake.
+Tämä projekti sisältää Ulkomaalarit.fi-sivuston lähdekoodin. Sivusto on rakennettu HTML- ja CSS-teknologioilla ja julkaistu GitHub Pagesin kautta. Sivustolla on käytössä hakukoneystävälliset meta-tiedot ja schema.org-rakenteinen data. Yhteydenotto tapahtuu sähköpostitse.
 
 ## Sivuston päivitys
 1. Tee muutokset paikallisesti
